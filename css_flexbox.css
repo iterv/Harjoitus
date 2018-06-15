@@ -1,0 +1,114 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6.2.2018, 15:55:03
+    Author     : Omistaja
+*/
+
+body { /* padding on jees aina */
+    padding: 2em;
+}
+
+#wrapper { 
+    /*  div saa display-arvokseen flex, koska käytetään CSS3-kielen flexboxia */
+    /*  elementit pyritään sijoittamaan yhdelle riville, mutta jos ei mahdu, näytetään allekkain */
+    display: flex;
+    flex-flow: row wrap;
+}
+
+header, article, footer { /* nämä on ny täys-leveitä */
+    flex: 1 100% ;
+    padding: 10px;
+}
+
+header {
+    background: tomato;
+}
+
+nav {
+    flex: 100%;
+}
+
+article {
+    background: aliceblue;
+    flex: 3 0px;
+    order: 2;
+}
+
+aside {
+    background: gold;
+    flex: 1 auto;
+    padding: 10px;
+}
+
+#left {
+        background-color: green;
+        order: 1;
+}
+
+#right {
+    order: 3;
+}   
+
+footer {
+    background: lightgreen;
+    order: 4;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    background: deepskyblue;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+
+nav ul a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: #fff;
+}
+nav ul a:hover {
+    background: steelblue;
+}
+
+/* RESPONSIIVISUUS MÄÄRITYKSET: */
+
+@media all and (max-width: 700px) {
+    nav ul {
+        justify-content: space-around;
+    }
+}
+
+@media all and (max-width: 580px) {
+    #right, #left, #article {
+        flex: 1 100%;
+    }
+    article {
+        order: 1;
+    }
+    #left {
+        order: 2;
+    }
+    #right {
+        order: 3;
+    }    
+    footer {
+        order: 4;
+    }
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+    nav ul a {
+        border-top: 1px solid;
+        border-bottom: 1px solid ;
+        text-align: center;
+        padding:  10px;
+    }
+}
