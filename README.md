@@ -1,1 +1,3 @@
-# Harjoitus
+# Flexbox CSS - Harjoitus
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
